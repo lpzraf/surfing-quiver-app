@@ -1,6 +1,6 @@
-# Surfing Quiver - Sinatra app
+# Surfing Quiver App  
 
-One Paragraph of project description goes here
+This is a surfboard collector web application built with Sinatra, a domain-specific language (DSL) of Ruby. The app allows you to create, update and/or delete profiles for your new surfboards. Some of the information you can add includes surfboard measurement specs, type of surfboard, "Best for" or intended use, among others.  
 
 ## Getting Started
 
