@@ -1,11 +1,10 @@
 GEM
-  remote: https://rubygems.org/
-  specs:
+remote: https://rubygems.org/
+specs:
 
 PLATFORMS
-  ruby
+ruby
 
 DEPENDENCIES
-
 BUNDLED WITH
-   2.0.1
+2.0.1
