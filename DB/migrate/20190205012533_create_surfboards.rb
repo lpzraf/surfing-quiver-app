@@ -1,5 +1,4 @@
-class CreateSurfboards < ActiveRecord::Migration
-
+class CreateSurfboards < ActiveRecord::Migration[5.2]
   def change
     create_table :surfboards do |t|
       t.string :brand_name
