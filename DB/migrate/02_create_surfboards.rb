@@ -6,7 +6,7 @@ class CreateSurfboards < ActiveRecord::Migration
       t.string :shaper
       t.string :length
       t.string :width
-      t.string :tickness
+      t.string :thickness
       t.string :tail
       t.string :type_of_surf
       t.timestamps null: false
