@@ -1,0 +1,15 @@
+
+<% @surfboard_owners.each do |surfboard_owner| %>
+
+	<ul>
+		<li><%= surfboard_owner.first_name %> <%=surfboard_owner.last_name %></li>
+	<% surfboard_owner.surfboards.each do |surfboard| %>
+		<ul>
+			<li><a href = "/surfboards/<%= surfboard.id %>"><%= surfboard.variety %></a></li>
+		</ul>
+
+		<% end %>
+			<br>
+	</ul>
+
+<% end %>
