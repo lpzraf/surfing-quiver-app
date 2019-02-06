@@ -1,4 +1,4 @@
-<h2>Wrong measurements? No worries, edit your board below:</h2>
+<h2>Wrong Measurements? No Worries, Edit Your Board Below:</h2>
 
 <form action="/surfboards/<%= @surfboard.id %>" method="POST">
 	<input type="hidden" name="_method" value="patch">
@@ -21,7 +21,7 @@
   <input type="text" name="tail" value="<%= @surfboard.tail %>">
 
   <label>Type of Surf</label>
-  <input type="text" name="ype_of_surf" value="<%= @surfboard.type_of_surf %>">
+  <input type="text" name="type_of_surf" value="<%= @surfboard.type_of_surf %>">
 
 	<input type="submit" value="Edit Tree">
 </form>

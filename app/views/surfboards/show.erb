@@ -1,0 +1,19 @@
+<h2>Hi <%= current_user.first_name %>! Here Is Your Surfboard</h2>
+
+<p>Brand Name: <%= @surfboard.brand_name %></p>
+<p>Shaper: <%= @tsurfboard.shaper %></p>
+<p>Length: <%= @surfboard.length %></p>
+<p>Width: <%= @surfboard.width %></p>
+<p>Thickness: <%= @tsurfboard.thickness %></p>
+<p>Tail: <%= @surfboard.tail %></p>
+<p>Type of Surf: <%= @surfboard.type_of_surf %></p>
+
+<% if authorized_to_edit?(@surfboard) %>
+
+<a href="/surfboards/<%= @surfboard.id %>/edit">Edit Surfboard</a>
+
+<form action="/surfboards/<%= @surfboard.id %>" method="POST">
+	<input type="hidden" name="_method" value="DELETE">
+	<input type="submit" name="delete" value="Delete Your Surfboard">
+</form>
+<% end %>
