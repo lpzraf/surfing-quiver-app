@@ -6,7 +6,7 @@
 		<li><%= surfboard_owner.first_name %> <%=surfboard_owner.last_name %></li>
 	<% surfboard_owner.surfboards.each do |surfboard| %>
 		<ul>
-			<li><a href = "/surfboards/<%= surfboard.id %>"><%= surfboard.variety %></a></li>
+			<li><a href = "/surfboards/<%= surfboard.id %>"><%= surfboard.brand_name %></a></li>
 		</ul>
 
 		<% end %>

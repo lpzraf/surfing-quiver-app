@@ -1,7 +1,7 @@
-<h1>Hello <%= @surfboard_owner.first_name %> <%= @surfboard_owner.last_name %></h1>
+<h1>Hello <%= @surfboard_owner.first_name %>!</h1>
 <br>
 <h2>Here's your rad surfboard quiver</h2>
 
  <% @surfboard_owner.surfboards.each do |surfboard| %>
- <p><a href="/surfboards/<%= surfboard.id %>"><%= surfboard.variety %></a></p>
+ <p><a href="/surfboards/<%= surfboard.id %>"><%= surfboard.brand_name %></a></p>
  <% end %>
