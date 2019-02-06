@@ -10,7 +10,7 @@ class SurfboardsController < ApplicationController
 	  if form_is_filled?
 	    flash[:message] = "Your surfboard was successfully added to the quiver"
 	    @surfboard = Surfboard.create(brand_name: params[:brand_name], shaper: params[:shaper], length: params[:length], width: params[:width], thickness: params[:fthickness], tail: params[:tail], type_of_surf: params[:type_of_surf], surfboard_owner_id: current_user.id)
-	    redirect "/trees/#{@tree.id}"
+	    redirect "/surfboards/#{@surfboard.id}"
 	  else
 	    flash[:errors] = "If you want to add the board to your quiver you have to fill all the empty fields."
 	    redirect '/surfboards/new'
@@ -51,9 +51,9 @@ class SurfboardsController < ApplicationController
 	  if authorized_to_edit?(@surfboard)
 	  	flash[:message] = "Your surfboard was deleted"
 	    @surfboard.destroy
-	    redirect "/surfboard-owner/#{current_user.id}"
+	    redirect "/surfboard_owner/#{current_user.id}"
 	  else
-	  	redirect "/surfboard-owner/#{current_user.id}"
+	  	redirect "/surfboard_owner/#{current_user.id}"
 	  end
 	end
 
