@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
 
   get "/" do
     if logged_in?
-      redirect "/surfboard-owners/#{current_user.id}"
+      redirect "/surfboard_owners/#{current_user.id}"
     else
       erb :'sessions/welcome'
     end
@@ -23,11 +23,11 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-  		@current_surfboard_owner ||= SurfboardOwner.find_by(id: session[:surfboard_owner_id])
+  		@current_surfboard_owner ||= SurfboardOwners.find_by(id: session[:surfboard_owner_id])
     end
 
     def authorized_to_edit?(surfboard)
-      surfboard.SurfboardOwner == current_user
+      surfboard.SurfboardOwners == current_user
     end
 
     def redirect_if_not_logged_in

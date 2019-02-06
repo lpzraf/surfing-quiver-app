@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   post '/surfboard_owners' do
-    @surfboard_owner = SurfboardOwner.new(params)
+    @surfboard_owner = SurfboardOwners.new(params)
     if @surfboard_owner.save
       session[:surfboard_owner_id] = @surfboard_owner.id
 
