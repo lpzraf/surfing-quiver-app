@@ -1,6 +1,6 @@
 class SurfboardOwnersController < ApplicationController
 
-  get "/surfboard_owners" do
+  get "/surfboard-owners" do
       @surfboard_owners = SurfboardOwner.all
 
       erb :"surfboard-owners/index"
