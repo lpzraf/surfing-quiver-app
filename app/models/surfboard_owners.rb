@@ -1,4 +1,4 @@
-class SurfboardOwner < ActiveRecord::Base
+class SurfboardOwners < ActiveRecord::Base
   has_secure_password
 
   validates :first_name, presence: true

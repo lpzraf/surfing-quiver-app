@@ -4,12 +4,12 @@ class SessionsController < ApplicationController
     erb :'sessions/signup'
   end
 
-  post '/surfboard_owners' do
+  post '/surfboard-owners' do
     @surfboard_owner = SurfboardOwners.new(params)
     if @surfboard_owner.save
       session[:surfboard_owner_id] = @surfboard_owner.id
 
-      redirect "/surfboard_owners/#{@surfboard_owner.id}"
+      redirect "/surfboard-owners/#{@surfboard_owner.id}"
     else
       flash[:errors] = "Wipe Out! Account creation failure: #{@surfboard_owner.errors.full_messages.to_sentence}"
       redirect '/signup'

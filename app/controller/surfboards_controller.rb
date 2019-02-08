@@ -51,9 +51,9 @@ class SurfboardsController < ApplicationController
 	  if authorized_to_edit?(@surfboard)
 	  	flash[:message] = "Your surfboard was deleted"
 	    @surfboard.destroy
-	    redirect "/surfboard_owner/#{current_user.id}"
+	    redirect "/surfboard-owner/#{current_user.id}"
 	  else
-	  	redirect "/surfboard_owner/#{current_user.id}"
+	  	redirect "/surfboard-owner/#{current_user.id}"
 	  end
 	end
 
