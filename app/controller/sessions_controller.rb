@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   post '/surfboard_owners' do
-    @surfboard_owner = SurfboardOwners.new(params)
+    @surfboard_owner = SurfboardOwner.new(params)
     if @surfboard_owner.save
       session[:surfboard_owner_id] = @surfboard_owner.id
 
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   end
 
   post '/login' do
-  	@surfboard_owner = SurfboardOwners.find_by(email: params[:email])
+  	@surfboard_owner = SurfboardOwner.find_by(email: params[:email])
 
   	if @surfboard_owner && @surfboard_owner.authenticate(params[:password])
   		session[:surfboard_owner_id] = @surfboard_owner.id

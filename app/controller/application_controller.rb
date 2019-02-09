@@ -1,6 +1,8 @@
 require "./config/environment"
+require 'rack-flash'
 
 class ApplicationController < Sinatra::Base
+  use Rack::Flash
   configure do
   set :public_folder, "public"
   set :views, "app/views"
@@ -23,11 +25,11 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-  		@current_surfboard_owner ||= SurfboardOwners.find_by(id: session[:surfboard_owner_id])
+  		@current_surfboard_owner ||= SurfboardOwner.find_by(id: session[:surfboard_owner_id])
     end
 
     def authorized_to_edit?(surfboard)
-      surfboard.SurfboardOwners == current_user
+      surfboard.SurfboardOwner == current_user
     end
 
     def redirect_if_not_logged_in
