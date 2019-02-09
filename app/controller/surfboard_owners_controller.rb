@@ -1,16 +1,16 @@
 class SurfboardOwnersController < ApplicationController
 
-  get "/surfboard-owners" do
-      @surfboard_owners = SurfboardOwner.all
+  get "/surfboard_owners" do
+      @surfboard_owners = SurfboardOwners.all
 
-      erb :"surfboard-owners/index"
+      erb :"surfboard_owners/index"
   end
 
-  get "/surfboard-owners/:id" do
+  get "/surfboard_owners/:id" do
     redirect_if_not_logged_in
-    @surfboard_owner = SurfboardOwner.find_by(id: params[:id])
+    @surfboard_owner = SurfboardOwners.find_by(id: params[:id])
 
-    erb :"surfboard-owners/show"
+    erb :"surfboard_owners/show"
   end
 
 end

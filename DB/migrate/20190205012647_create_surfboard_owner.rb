@@ -1,4 +1,4 @@
-class CreateSurfboardOwners < ActiveRecord::Migration[5.2]
+class CreateSurfboardOwner < ActiveRecord::Migration[5.2]
     def change
       create_table :surfboard_owners do |t|
         t.string :first_name
@@ -8,3 +8,4 @@ class CreateSurfboardOwners < ActiveRecord::Migration[5.2]
         t.timestamps null: false
     end
   end
+end
