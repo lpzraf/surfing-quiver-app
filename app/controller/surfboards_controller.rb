@@ -20,7 +20,11 @@ class SurfboardsController < ApplicationController
 	get '/surfboards/:id'  do
 	  redirect_if_not_logged_in
 	  set_surfboard
-	  erb :'/surfboards/show'
+		if @tree.nil?
+			redirect "/surfboard_owners"
+		else
+			erb :'/surfboards/show'
+		end
 	end
 
 	get '/surfboards/:id/edit' do
@@ -29,7 +33,7 @@ class SurfboardsController < ApplicationController
 	  if @surfboard.surfboard_owner == current_user
 	  	erb :'/surfboards/edit'
 	  else flash[:errors] = "You can only edit your surfboards."
-	  	  redirect "/surfboards/#{current_user.id}"
+	  redirect "/surfboards/#{current_user.id}"
 	  end
 	end
 
@@ -51,9 +55,9 @@ class SurfboardsController < ApplicationController
 	  if authorized_to_edit?(@surfboard)
 	  	flash[:message] = "Your surfboard was deleted"
 	    @surfboard.destroy
-	    redirect "/surfboard_owner/#{current_user.id}"
+	    redirect "/surfboard_owners/#{current_user.id}"
 	  else
-	  	redirect "/surfboard_owner/#{current_user.id}"
+	  	redirect "/surfboard_owners/#{current_user.id}"
 	  end
 	end
 

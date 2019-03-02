@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_02_05_012647) do
     t.string "thickness"
     t.string "tail"
     t.string "type_of_surf"
+    t.integer "surfboard_owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

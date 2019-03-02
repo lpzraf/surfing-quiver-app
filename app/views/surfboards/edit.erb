@@ -1,27 +1,28 @@
-<h2>Wrong Measurements? No Worries, Edit Your Board Below:</h2>
+<h1>Wrong Measurements?...no worries, edit your board below:</h1>
 
 <form action="/surfboards/<%= @surfboard.id %>" method="POST">
 	<input type="hidden" name="_method" value="patch">
 	<label>Brand Name</label>
 	<input type="text" name="brand_name" value="<%= @surfboard.brand_name %>">
-
+  <br>
 	<label>Shaper</label>
 	<input type="text" name="shaper" value="<%= @surfboard.shaper %>">
-
+  <br>
 	<label>Length</label>
 	<input type="text" name="length" value="<%= @surfboard.length %>">
-
+  <br>
   <label>Width</label>
   <input type="text" name="width" value="<%= @surfboard.width %>">
-
+  <br>
   <label>Thickness</label>
   <input type="text" name="thickness" value="<%= @surfboard.thickness %>">
-
+  <br>
   <label>Tail</label>
   <input type="text" name="tail" value="<%= @surfboard.tail %>">
-
+  <br>
   <label>Type of Surf</label>
   <input type="text" name="type_of_surf" value="<%= @surfboard.type_of_surf %>">
-
-	<input type="submit" value="Edit Tree">
+  <br>
+	<br>
+	<input type="submit" value="Edit Your Rocket!">
 </form>

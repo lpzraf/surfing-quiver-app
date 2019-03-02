@@ -8,6 +8,8 @@ class CreateSurfboards < ActiveRecord::Migration[5.2]
         t.string :thickness
         t.string :tail
         t.string :type_of_surf
+        t.integer :surfboard_owner_id
+
         t.timestamps null: false
     end
   end

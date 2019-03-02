@@ -1,6 +1,7 @@
 class SurfboardOwnersController < ApplicationController
 
   get "/surfboard_owners" do
+      redirect_if_not_logged_in
       @surfboard_owners = SurfboardOwner.all
 
       erb :"surfboard_owners/index"
