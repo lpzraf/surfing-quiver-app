@@ -13,5 +13,4 @@ class SurfboardOwnersController < ApplicationController
 
     erb :"surfboard_owners/show"
   end
-
 end
