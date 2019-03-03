@@ -1,3 +1,5 @@
+require 'sinatra/flash'
+
 class SessionsController < ApplicationController
 
   get '/signup' do

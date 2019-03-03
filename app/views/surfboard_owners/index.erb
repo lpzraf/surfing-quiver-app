@@ -1,18 +1,22 @@
 
-<h2>Surfboard Owners</h2>
+<h1>Surfboard Quivers by Owner</h1>
+<h2>You can see what surfboards others have but can only click on your own boards.</h2>
+<hr id="firstline"></hr>
 
 <% @surfboard_owners.each do |surfboard_owner| %>
 
+<div class="container">
 	<ul>
 		<li><%= surfboard_owner.first_name %> <%=surfboard_owner.last_name %></li>
 	<% surfboard_owner.surfboards.each do |surfboard| %>
 		<ul>
-			<li><a href = "/surfboards/<%= surfboard.id %>"><%= surfboard.brand_name %></a></li>
+			<li><a href = "/surfboards/<%= surfboard.id %>"><%= surfboard.brand_name %> - <%= surfboard.length %></a></li>
 		</ul>
 
 		<% end %>
 			<br>
 	</ul>
-
 <% end %>
-<h4>Signing out? Do it <a href="/logout">here</a>.</h4>
+</div>
+<hr id="firstline"></hr>
+<h4>Would like to sign out?</h4><h4>Do it <a href="/logout">here</a>.</h4>

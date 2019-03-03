@@ -1,17 +1,21 @@
-<h2>Hi <%= current_user.first_name %>! Here Is Your Surfboard</h2>
+<h1>Hi <%= current_user.first_name %>!</h1>
+<h2>You Just Added This <%= @surfboard.brand_name %> Surfboard To Your Quiver.</h2>
+<hr id="firstline"></hr>
 
-<p>Brand Name: <%= @surfboard.brand_name %></p>
-<p>Shaper: <%= @surfboard.shaper %></p>
-<p>Length: <%= @surfboard.length %></p>
-<p>Width: <%= @surfboard.width %></p>
-<p>Thickness: <%= @surfboard.thickness %></p>
-<p>Tail: <%= @surfboard.tail %></p>
-<p>Type of Surf: <%= @surfboard.type_of_surf %></p>
+<p id="bold">Brand Name: <%= @surfboard.brand_name %></p>
+<p id="bold">Shaper: <%= @surfboard.shaper %></p>
+<p id="bold">Length: <%= @surfboard.length %></p>
+<p id="bold">Width: <%= @surfboard.width %></p>
+<p id="bold">Thickness: <%= @surfboard.thickness %></p>
+<p id="bold">Tail: <%= @surfboard.tail %></p>
+<p id="bold">Type of Surf: <%= @surfboard.type_of_surf %></p>
 
 <% if authorized_to_edit?(@surfboard) %>
-
-<a href="/surfboards/<%= @surfboard.id %>/edit">Edit Surfboard</a>
-
+<br>
+<br>
+<hr id="firstline"></hr>
+<p><a href="/surfboards/<%= @surfboard.id %>/edit">Edit Surfboard</a> -
+<a href="/surfboards/new">Create a New One</a> - <a href="/surfboard_owners">Back to Index</a></p>
 <form action="/surfboards/<%= @surfboard.id %>" method="POST">
 	<input type="hidden" name="_method" value="DELETE">
 	<input type="submit" name="delete" value="Delete Your Surfboard">

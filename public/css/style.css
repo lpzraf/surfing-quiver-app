@@ -1,0 +1,140 @@
+body{
+	background-color: #F9FF00;
+	background-image: url(lines5.jpg);}
+
+#firstline {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 1px solid;
+      margin: 0 auto;
+    	padding: 0;
+    	width: 75%;
+    	height: 1.74em;}
+
+#bold {
+    font-weight: bold;
+}
+
+h1 {
+  	color: black;
+  	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  	font-size: 50px;
+   /* letter-spacing: 0.02em;*/
+  	margin: 0 auto;
+    padding: 0;
+    width: 75%;
+    height: 1.74em;
+    /*text-shadow: 3px -1px 0px #FF3DB1*/
+  }
+
+  h2 {
+    	color: black;
+    	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+     /* letter-spacing: 0.02em;*/
+    	margin: 0 auto;
+      padding: 0;
+      width: 75%;
+      height: 1.74em;
+      /*text-shadow: 3px -1px 0px #FF3DB1*/
+    }
+
+  h3, h4, a {
+        font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+       /* letter-spacing: 0.02em;*/
+        margin: 0 auto;
+        padding: 0;
+        width: 75%;
+        height: 1.74em;
+        /*text-shadow: 3px -1px 0px #FF3DB1*/
+      }
+
+
+p  {
+  	color: black;
+  	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  	font-size: 16px;
+  	margin: 0 auto;
+    letter-spacing: 0.02em;
+    padding: 0;
+    padding-top: 10px;
+    width: 75%;
+    height: 1.74em;}
+
+li {
+    font-weight: normal;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: black;
+    margin: 0 auto;
+    width: 75%;}
+
+.container > ul:first-child > li {
+    color: black;
+    font-weight: bold;
+  	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  	font-size: 16px;
+  	margin: 0 auto;
+    width: 75%;}
+
+  form {
+      	color: black;
+      	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+      	font-size: 16px;
+      	margin: 0 auto;
+        padding: 0;
+        padding-top: 10px;
+        width: 75%;
+        height: 1.74em;}
+
+#outline {
+      border-radius: 15px;
+      border: 2px solid #000000
+      padding: 7px;
+      width: 200px;
+      height: 13px;
+    }
+
+
+
+  /*Tablet*/
+@media all and (max-width: 768px)
+{  body{
+    background-color: pink;
+    /*background-image: none;*/}
+  h1{
+    font-size: 60px;}
+  #box {
+    height: 58em;
+  }
+  p{
+    font-size: 55px;
+    padding-top: 100px;}
+  #fsizecolor {
+    font-size: 20px;
+}
+}
+
+  /*Mobile*/
+@media all and (max-width: 320px)
+{ body{
+    background-color: pink;
+    background-image: none;}
+  #box {
+    height: 68em;
+  }
+  h1{
+    font-size: 40px;}
+
+  p{
+    font-size: 28px;
+    padding-top: 100px;}
+  #fsizecolor {
+    font-size: 15px;
+}
+}
+
+/*Bigger Size*/
+@media all and (min-width: 1500px)
+{ body{
+    background-color: pink;
+    background-image: none;}

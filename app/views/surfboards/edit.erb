@@ -1,28 +1,41 @@
-<h1>Wrong Measurements?...no worries, edit your board below:</h1>
+<h1>Wrong info?</h1>
+<h2>No worries, you can edit your surfboard specs below.</h2>
+<hr id="firstline"></hr>
 
 <form action="/surfboards/<%= @surfboard.id %>" method="POST">
 	<input type="hidden" name="_method" value="patch">
 	<label>Brand Name</label>
-	<input type="text" name="brand_name" value="<%= @surfboard.brand_name %>">
+	<input type="text" id="outline" name="brand_name" value="<%= @surfboard.brand_name %>">
   <br>
 	<label>Shaper</label>
-	<input type="text" name="shaper" value="<%= @surfboard.shaper %>">
+	<input type="text" id="outline" name="shaper" value="<%= @surfboard.shaper %>">
   <br>
 	<label>Length</label>
-	<input type="text" name="length" value="<%= @surfboard.length %>">
+	<input type="text" id="outline" name="length" value="<%= @surfboard.length %>">
   <br>
   <label>Width</label>
-  <input type="text" name="width" value="<%= @surfboard.width %>">
+  <input type="text" id="outline" name="width" value="<%= @surfboard.width %>">
   <br>
   <label>Thickness</label>
-  <input type="text" name="thickness" value="<%= @surfboard.thickness %>">
+  <input type="text" id="outline" name="thickness" value="<%= @surfboard.thickness %>">
   <br>
   <label>Tail</label>
-  <input type="text" name="tail" value="<%= @surfboard.tail %>">
+  <input type="text" id="outline" name="tail" value="<%= @surfboard.tail %>">
   <br>
   <label>Type of Surf</label>
-  <input type="text" name="type_of_surf" value="<%= @surfboard.type_of_surf %>">
+  <input type="text" id="outline" name="type_of_surf" value="<%= @surfboard.type_of_surf %>">
   <br>
 	<br>
-	<input type="submit" value="Edit Your Rocket!">
+	<input type="submit" value="Save Your Edit">
 </form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr id="firstline"></hr>

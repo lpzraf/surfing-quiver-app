@@ -1,3 +1,5 @@
+require 'sinatra/flash'
+
 class SurfboardsController < ApplicationController
 
 	get '/surfboards/new' do
@@ -20,7 +22,7 @@ class SurfboardsController < ApplicationController
 	get '/surfboards/:id'  do
 	  redirect_if_not_logged_in
 	  set_surfboard
-		if @tree.nil?
+		if @surfboard.nil?
 			redirect "/surfboard_owners"
 		else
 			erb :'/surfboards/show'
@@ -41,7 +43,7 @@ class SurfboardsController < ApplicationController
 	  set_surfboard
 	  redirect_if_not_logged_in
 	  if @surfboard.surfboard_owner == current_user && form_is_filled?
-	  	flash[:message] = "Your surfboard was successfully updated"
+	  	flash[:message] = "Success! Your surfboard was updated."
 	  	@surfboard.update(brand_name: params[:brand_name], shaper: params[:shaper], length: params[:length], width: params[:width], thickness: params[:thickness], tail: params[:tail], type_of_surf: params[:type_of_surf])
 	  	redirect "/surfboards/#{@surfboard.id}"
 	  else

@@ -1,10 +1,15 @@
 <h1>Hello <%= @surfboard_owner.first_name %>!</h1>
 <br>
-<h2>Here's your rad surfboard quiver</h2>
+<h2>Here's your rad surfboard quiver.</h2>
+ <hr id="firstline"></hr>
 
  <% @surfboard_owner.surfboards.each do |surfboard| %>
- <p><a href="/surfboards/<%= surfboard.id %>"><%= surfboard.brand_name %></a></p>
+ <ul>
+   <li><a href="/surfboards/<%= surfboard.id %>"><%= surfboard.brand_name %> - <%= surfboard.length %></a></li>
+ </ul>
  <% end %>
-
- <h3>No boards yet? You can add them <a href="/surfboards/new">here</a>.</h3>
+ <br>
+ <br>
+ <hr id="firstline"></hr>
+ <h3>If you don't see boards, you can add them <a href="/surfboards/new">here</a>.</h3>
  <h4>Signing out? Do it <a href="/logout">here</a>.</h4>
