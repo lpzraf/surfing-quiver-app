@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
       redirect "/surfboard_owners/#{@surfboard_owner.id}"
     else
-      flash[:errors] = "Wipe Out! Account creation failure: #{@surfboard_owner.errors.full_messages.to_sentence}"
+      flash[:errors] = "Wipe Out! Account creation failure: #{@surfboard_owner.errors.full_messages.to_sentence}."
       redirect '/signup'
     end
   end
@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
 
   		redirect "surfboard_owners/#{@surfboard_owner.id}"
   	else
-      flash[:errors] = "Something's wrong. Your email or password is incorrect. Try again or Sign Up to continue"
+      flash[:errors] = "Something's wrong. Your email or password is incorrect. Try again or Sign Up to continue."
       redirect "/login"
   	end
   end

@@ -1,60 +1,30 @@
 # Surfing Quiver App  
 
-This is a surfboard collector web application built with Sinatra, a domain-specific language (DSL) of Ruby. The app allows you to create, update and/or delete profiles for your new surfboards. Some of the information you can add includes surfboard measurement specs, type of surfboard, "Best for" or intended use, among others.  
+This is a web application for families or surfing clubs looking to keep organized their member's surfboards. It was built with Sinatra, a domain-specific language (DSL) of Ruby, and the app allows you to create, read, update and/or delete (CRUD) profiles for your new boards. Some of the data you can add includes surfboard measurement specs like type of surfboard, brand name, shaper, and type of surf among others.  
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See below for steps on how to deploy the project on a live system.
 
-### Prerequisites
+## Installation
 
-What things you need to install the software and how to install them
+1. Clone the repo from the following URL to your machine:
+***https://github.com/lpzraf/surfing-quiver-app***
 
-```
-Give examples
-```
+2. Move to the right directory performing the following command:
+***cd surfing-quiver-app***
 
-### Installing
+3. Install The Gems Running:
+***bundle install***
 
-A step by step series of examples that tell you how to get a development env running
+4. Set Your Server Running:
+***shotgun***
 
-Say what the step will be
+5. Copy/Paste in the browser the URL given by:
+***shotgun***
 
-```
-Give the example
-```
+That's it!
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
@@ -75,3 +45,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Tana Glenn
 * Howard DeVennish
 * Flatiron School coaches
+
+
+Check me out at ***www.rafaelopez.com***

@@ -91,7 +91,7 @@ li {
         padding: 0;
         padding-top: 10px;
         width: 75%;
-        height: 1.74em;}
+			/* height: 1.74em; */}
 
 	img {
 			margin: 0 auto;
@@ -102,7 +102,7 @@ li {
 	label {
 		display:inline-block;
 		width: 100px;
-
+		height: 1.84em;
 	}
 
 #outline {
