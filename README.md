@@ -14,16 +14,14 @@ The following instructions will get you a copy of the project up and running on 
 2. Move to the right directory performing the following command:
 ***cd surfing-quiver-app***
 
-3. Install The Gems Running:
+3. Install the gems running:
 ***bundle install***
 
-4. Set Your Server Running:
+4. Set your server running:
 ***shotgun***
 
 5. Copy/Paste in the browser the URL given by:
 ***shotgun***
-
-That's it!
 
 
 ## Built With
