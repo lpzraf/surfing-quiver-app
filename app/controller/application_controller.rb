@@ -39,5 +39,12 @@ class ApplicationController < Sinatra::Base
         redirect '/'
       end
     end
+    def owner_name(surfboard)
+      if surfboard.surfboard_owner == current_user
+        "your"
+      else
+        surfboard.surfboard_owner.first_name + "'s"
+      end
+    end
   end
 end

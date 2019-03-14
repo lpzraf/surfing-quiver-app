@@ -1,5 +1,5 @@
 <h1>Hi <%= current_user.first_name %>!</h1>
-<h2>This is a cool <%= @surfboard.brand_name %> surfboard in your quiver.</h2>
+<h2>This is a cool <%= @surfboard.brand_name %> surfboard in <%= owner_name(@surfboard) %> quiver.</h2>
 <hr id="firstline"></hr>
 
 <p id="bold">Brand Name: <%= @surfboard.brand_name %></p>
@@ -20,4 +20,10 @@
 	<input type="hidden" name="_method" value="DELETE">
 	<input type="submit" name="delete" value="Delete Your Surfboard">
 </form>
+<% else%>
+<br>
+<br>
+<hr id="firstline"></hr>
+<p><a href="/surfboard_owners">Back to Index</a></p>
+
 <% end %>

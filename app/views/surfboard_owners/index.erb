@@ -8,13 +8,13 @@
 <div class="container">
 	<ul>
 		<li><%= surfboard_owner.first_name %> <%=surfboard_owner.last_name %></li>
-	<% surfboard_owner.surfboards.each do |surfboard| %>
-		<ul>
-			<li><a href = "/surfboards/<%= surfboard.id %>"><%= surfboard.brand_name %> - <%= surfboard.length %></a></li>
-		</ul>
+<% surfboard_owner.surfboards.each do |surfboard| %>
+	<ul>
+		<li><a href = "/surfboards/<%= surfboard.id %>"><%= surfboard.brand_name %> - <%= surfboard.length %></a></li>
+	</ul>
 
-		<% end %>
-			<br>
+<% end %>
+<br>
 	</ul>
 <% end %>
 </div>

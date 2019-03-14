@@ -35,7 +35,7 @@ class SurfboardsController < ApplicationController
 	  if @surfboard.surfboard_owner == current_user
 	  	erb :'/surfboards/edit'
 	  else flash[:errors] = "You can only edit your surfboards."
-	  redirect "/surfboards/#{current_user.id}"
+	  redirect "/surfboard_owners"
 	  end
 	end
 
