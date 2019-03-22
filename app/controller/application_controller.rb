@@ -33,17 +33,42 @@ class ApplicationController < Sinatra::Base
       surfboard.surfboard_owner == current_user
     end
 
+    def not_allowed_to_edit(surfboard)
+      if surfboard.surfboard_owner != current_user
+        flash[:errors] = "You can only edit your surfboards."
+        redirect "/surfboard_owners"
+      end
+    end
+
     def redirect_if_not_logged_in
       if !logged_in?
         flash[:errors] = "You must be logged in to check this radical page"
         redirect '/'
       end
     end
+
     def owner_name(surfboard)
       if surfboard.surfboard_owner == current_user
         "your"
       else
         surfboard.surfboard_owner.first_name + "'s"
+      end
+    end
+
+#new method for patch
+    def must_fill_all_fields(surfboard)
+  		if surfboard.surfboard_owner != current_user || !form_is_filled?
+  			flash[:errors] = "All fields must be filled."
+  			redirect "/surfboards/#{@surfboard.id}/edit"
+  		end
+  	end
+
+#new method for delete
+  def destroy_surfboard(surfboard)
+      if authorized_to_edit?(surfboard)
+        flash[:message] = "Your surfboard was deleted"
+        surfboard.destroy
+        redirect "/surfboard_owners/#{current_user.id}"
       end
     end
   end

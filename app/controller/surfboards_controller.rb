@@ -32,37 +32,53 @@ class SurfboardsController < ApplicationController
 	get '/surfboards/:id/edit' do
 	  set_surfboard
 	  redirect_if_not_logged_in
-	  if @surfboard.surfboard_owner == current_user
-	  	erb :'/surfboards/edit'
-	  else flash[:errors] = "You can only edit your surfboards."
-	  redirect "/surfboard_owners"
-	  end
+		not_allowed_to_edit(@surfboard)
+	  erb :'/surfboards/edit'
 	end
 
+	#old patch
+	# patch '/surfboards/:id' do
+	#   set_surfboard
+	#   redirect_if_not_logged_in
+	#   if @surfboard.surfboard_owner == current_user && form_is_filled?
+	#   	flash[:message] = "Success! Your surfboard was updated."
+	#   	@surfboard.update(brand_name: params[:brand_name], shaper: params[:shaper], length: params[:length], width: params[:width], thickness: params[:thickness], tail: params[:tail], type_of_surf: params[:type_of_surf])
+	#   	redirect "/surfboards/#{@surfboard.id}"
+	#   else
+	#   	flash[:errors] = "All fields must be filled."
+	#   	redirect "/surfboards/#{@surfboard.id}/edit"
+	#   end
+	# end
+
+	#refactored patch
 	patch '/surfboards/:id' do
-	  set_surfboard
-	  redirect_if_not_logged_in
-	  if @surfboard.surfboard_owner == current_user && form_is_filled?
-	  	flash[:message] = "Success! Your surfboard was updated."
-	  	@surfboard.update(brand_name: params[:brand_name], shaper: params[:shaper], length: params[:length], width: params[:width], thickness: params[:thickness], tail: params[:tail], type_of_surf: params[:type_of_surf])
-	  	redirect "/surfboards/#{@surfboard.id}"
-	  else
-	  	flash[:errors] = "All fields must be filled."
-	  	redirect "/surfboards/#{@surfboard.id}/edit"
-	  end
+		set_surfboard
+		redirect_if_not_logged_in
+		must_fill_all_fields(@surfboard)
+		flash[:message] = "Success! Your surfboard was updated."
+		@surfboard.update(brand_name: params[:brand_name], shaper: params[:shaper], length: params[:length], width: params[:width], thickness: params[:thickness], tail: params[:tail], type_of_surf: params[:type_of_surf])
+		redirect "/surfboards/#{@surfboard.id}"
 	end
 
+
+	#old delete
+	# delete '/surfboards/:id' do
+	#   set_surfboard
+	#   if authorized_to_edit?(@surfboard)
+	#   	flash[:message] = "Your surfboard was deleted"
+	#     @surfboard.destroy
+	#     redirect "/surfboard_owners/#{current_user.id}"
+	#   else
+	#   	redirect "/surfboard_owners/#{current_user.id}"
+	#   end
+	# end
+
+	#refactored delete
 	delete '/surfboards/:id' do
 	  set_surfboard
-	  if authorized_to_edit?(@surfboard)
-	  	flash[:message] = "Your surfboard was deleted"
-	    @surfboard.destroy
-	    redirect "/surfboard_owners/#{current_user.id}"
-	  else
-	  	redirect "/surfboard_owners/#{current_user.id}"
-	  end
+		destroy_surfboard(@surfboard)
+	 	redirect "/surfboard_owners/#{current_user.id}"
 	end
-
 
 	private
 
