@@ -54,6 +54,7 @@ class SurfboardsController < ApplicationController
 	patch '/surfboards/:id' do
 		set_surfboard
 		redirect_if_not_logged_in
+		not_allowed_to_edit(@surfboard)
 		must_fill_all_fields(@surfboard)
 		flash[:message] = "Success! Your surfboard was updated."
 		@surfboard.update(brand_name: params[:brand_name], shaper: params[:shaper], length: params[:length], width: params[:width], thickness: params[:thickness], tail: params[:tail], type_of_surf: params[:type_of_surf])
@@ -76,6 +77,7 @@ class SurfboardsController < ApplicationController
 	#refactored delete
 	delete '/surfboards/:id' do
 	  set_surfboard
+		not_allowed_to_edit(@surfboard)
 		destroy_surfboard(@surfboard)
 	 	redirect "/surfboard_owners/#{current_user.id}"
 	end
